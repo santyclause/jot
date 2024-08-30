@@ -12,12 +12,19 @@ export class Note {
   }
 
   get createdAtDate() {
-    return this.createdAt.getDate();
+    return this.createdAt.getMonth() + '/' + this.createdAt.getDate() + '/' + this.createdAt.getFullYear();
+  }
+
+  get updatedAtFullDateAndTime() {
+    let date = this.updatedAt;
+    let output = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear() + ' at ' + date.getHours() + ':' + date.getMinutes();
+
+    return output;
   }
 
   get categorizedHTMLTemplate() {
     return `
-                  <div class="categorized-note" style="border-left: 2px solid ${this.color}" role="button">
+                  <div onclick="app.NotesController.setActiveNote('${this.id}')" class="categorized-note" style="border-left: 2px solid ${this.color}" role="button">
                     <p>
                       <i class="mdi mdi-note"></i>
                       <span>${this.name}</span>
@@ -32,7 +39,7 @@ export class Note {
   get uncategorizedHTMLTemplate() {
     return `
               <div class="col-12">
-                <div class="uncategorized-note" style="border-left: 2px solid ${this.color}" role="button">
+                <div onclick="app.NotesController.setActiveNote('${this.id}')" class="uncategorized-note" style="border-left: 2px solid ${this.color}" role="button">
                   <p>
                     <i class="mdi mdi-note"></i>
                     <span>${this.name}</span>
@@ -47,22 +54,22 @@ export class Note {
 
   get activeNoteHTMLTemplate() {
     return `
-          <section class="row my-3">
-            <div class="col-1">
-              <div style="background-color: ${this.color}"></div>
+          <section class="row my-3 px-4">
+            <div class="col-1 d-flex justify-content-end">
+              <div class="w-75 h-100 bookmark" style="background-color: ${this.color}"></div>
             </div>
             <div class="col-md-9">
               <div>
                 <h3>${this.name}</h3>
-                <p>${this.createdAtDate}</p>
-                <p>Last updated time</p>
+                <p>Created on ${this.createdAtDate}</p>
+                <p>Last updated on ${this.updatedAtFullDateAndTime}</p>
               </div>
             </div>
             <div class="col-md-1 align-self-end">
-              <button class="btn-delete"><i class="mdi mdi-delete-outline"></i> Delete</button>
+              <button class="btn-delete"><i class="mdi mdi-delete"></i> Delete</button>
             </div>
             <div class="col-md-1 align-self-end">
-              <button class="btn-save"><i class="mdi mdi-floppy"></i>Save</button>
+              <button class="btn-save"><i class="mdi mdi-floppy"></i> Save</button>
             </div>
           </section>
           <div class="text-cont col-flex pb-4 px-4">

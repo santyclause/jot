@@ -88,3 +88,25 @@ h5 {
   border-radius: 10px;
   padding: 1em;
 }
+
+.bookmark {
+  margin-top: -1.5em;
+}
+
+.btn-delete {
+  background-color: transparent;
+  border: 2px solid var(--secondary);
+  border-radius: 10px;
+  color: var(--secondary);
+  padding: 0.5em 0;
+  width: 100%;
+}
+
+.btn-save {
+  background-color: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  color: var(--light);
+  padding: 0.5em 0;
+  width: 100%;
+}

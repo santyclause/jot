@@ -3,14 +3,20 @@ import { notesService } from "../services/NotesService.js";
 
 export class NotesController {
   constructor() {
-    this.drawNoteList()
+    AppState.on('activeNote', this.drawActiveNote, this);
+    this.drawNoteList();
+    this.drawNoActiveNotes();
+  }
+
+  setActiveNote(selectedId) {
+    notesService.setActiveNote(selectedId);
   }
 
   drawNoteList() {
     const noteListElem = document.getElementById('note-list');
     const categories = AppState.categories;
     const notes = AppState.notes;
-    let noteCont = '';
+    let noteCont = ``;
 
     categories.forEach((category) => noteCont += category.HTMLTemplate);
     notes.forEach((note) => {
@@ -20,5 +26,25 @@ export class NotesController {
     })
 
     noteListElem.innerHTML = noteCont;
+  }
+
+  drawActiveNote() {
+    const activeNoteElem = document.getElementById('active-note');
+    const activeNote = AppState.activeNote;
+
+    if (AppState.activeNote != null) {
+      activeNoteElem.innerHTML = activeNote.activeNoteHTMLTemplate;
+    } else {
+      this.drawNoActiveNotes();
+    }
+  }
+
+  drawNoActiveNotes() {
+    const activeNoteElem = document.getElementById('active-note');
+
+    activeNoteElem.innerHTML = `
+          <div class=" h-100 no-note d-flex justify-content-center align-items-center">
+            <p>Create or select a Jot to start Jotting</p>
+          </div>`
   }
 }
