@@ -1,4 +1,6 @@
 import { AppState } from "../AppState.js";
+import { Note } from "../models/Note.js";
+import { Category } from "../models/Category.js";
 
 class NotesService {
 
@@ -16,8 +18,20 @@ class NotesService {
     }
   }
 
+  createNote(noteData) {
+    const newNote = new Note(noteData);
+    const categories = AppState.categories;
+
+    if (newNote.category != '' && categories.find((category) => newNote.category == category.name) == undefined) {
+      const newCategory = new Category({ name: newNote.category });
+      categories.push(newCategory);
+    }
+    AppState.notes.push(newNote);
+  }
+
   updateBody(areaContent) {
     AppState.activeNote.body = areaContent;
+    AppState.emit('notes');
   }
 }
 

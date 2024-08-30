@@ -16,12 +16,14 @@
 </head>
 
 <body class="vh-100">
-  <main class="container-fluid bgm-darker h-100">
-    <div class="px-1 py-3 h-10 d-flex align-items-center">
+  <header class="container-fluid bgm-darker h-10">
+    <div class="px-1 py-3 h-100 d-flex align-items-center">
       <h4>Jot...</h4>
     </div>
+  </header>
+  <main class="container-fluid bgm-darker h-90">
     <!-- SECTION Main content with note list on the left and the active note on the right -->
-    <section class="row h-90 pb-3">
+    <section class="row h-100 pb-3">
       <div class="col-md-3">
         <div class="my-card">
           <!-- NOTE Jot count -->
@@ -30,16 +32,16 @@
           </div>
           <!-- STUB Form-->
           <div>
-            <form class="container-fluid p-0">
+            <form onsubmit="app.NotesController.createNote()" class="container-fluid p-0">
               <section class="row g-1">
                 <div class="col-md-8">
-                  <input type="text" placeholder="Jot Name" class="w-100" required>
+                  <input type="text" name="name" placeholder="Jot Name" class="w-100" required>
                 </div>
                 <div class="col-md-4">
-                  <input type="color" class="w-100 h-100" required>
+                  <input type="color" name="color" class="w-100 h-100" required>
                 </div>
                 <div class="col-md-8">
-                  <input type="text" placeholder="Jot Category" class="w-100">
+                  <input type="text" name="category" placeholder="Jot Category" class="w-100">
                 </div>
                 <div class="col-md-4">
                   <button type="submit" class="w-100">Create</button>
@@ -49,7 +51,7 @@
           </div>
           <!-- SECTION Note list -->
           <div class="container-fluid p-0">
-            <section id="note-list" class="row">
+            <section id="note-list" class="row note-list">
               <!-- NOTE Notes will be drawn here-->
               <!-- <div class="col-12">
                 <div class="category-cont">

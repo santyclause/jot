@@ -1,15 +1,24 @@
 import { AppState } from "../AppState.js";
 import { notesService } from "../services/NotesService.js";
+import { getFormData } from "../utils/FormHandler.js";
 
 export class NotesController {
   constructor() {
     AppState.on('activeNote', this.drawActiveNote, this);
+    AppState.on('notes', this.drawNoteList);
     this.drawNoteList();
     this.drawNoActiveNotes();
   }
 
   setActiveNote(selectedId) {
     notesService.setActiveNote(selectedId);
+  }
+
+  createNote() {
+    event.preventDefault();
+    const newNoteForm = event.target;
+    const noteData = getFormData(newNoteForm);
+    notesService.createNote(noteData);
   }
 
   updateBody() {
