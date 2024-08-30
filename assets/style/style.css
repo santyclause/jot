@@ -52,6 +52,13 @@ h5 {
   flex: 1;
 }
 
+.btn-create {
+  background-color: var(--primary);
+  border-radius: 10px;
+  color: var(--light);
+  border: none;
+}
+
 .category-cont {
   box-shadow: 0px 4px 4px var(--darker);
   margin: 1em 0;

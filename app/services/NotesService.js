@@ -23,6 +23,12 @@ class NotesService {
   createNote(noteData) {
     const newNote = new Note(noteData);
     const categories = AppState.categories;
+    let idToString = newNote.id.toString()
+
+    if (newNote.color == "#999999") {
+      newNote.color = '#' + idToString.substring(idToString.length - 6);
+      console.log(newNote.color)
+    }
 
     if (newNote.category != '' && categories.find((category) => newNote.category.toLowerCase() == category.name.toLowerCase()) == undefined) {
       const newCategory = new Category({ name: newNote.category });
