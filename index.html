@@ -25,7 +25,7 @@
       <div class="col-md-3">
         <div class="my-card">
           <!-- NOTE Jot count -->
-          <div class="text-end">
+          <div class="text-end my-3">
             Jot count
           </div>
           <!-- STUB Form-->
@@ -51,19 +51,31 @@
           <div class="container-fluid p-0">
             <section class="row">
               <div class="col-12">
-                <div class="category" role="button">
-                  <p>
-                    <i class="mdi mdi-folder"></i>
-                    <span>Category</span>
-                  </p>
-                </div>
-                <div>
-                  Categorized Note
+                <div class="category-cont">
+                  <div class="category" role="button">
+                    <p>
+                      <i class="mdi mdi-folder"></i>
+                      <span>Category</span>
+                    </p>
+                  </div>
+                  <div class="categorized-note">
+                    <p>
+                      <i class="mdi mdi-note"></i>
+                      <span>Note</span>
+                    </p>
+                    <p>Note Content</p>
+                  </div>
                 </div>
               </div>
               <div class="col-12">
-                <div>
-                  Uncategorized Note
+                <div class="uncategorized-note">
+                  <p>
+                    <i class="mdi mdi-note"></i>
+                    <span>Note</span>
+                  </p>
+                  <p>
+                    Note Content
+                  </p>
                 </div>
               </div>
             </section>
@@ -75,7 +87,7 @@
       <div class="col-md-9">
         <div class="my-card">
           <!-- SECTION Note details -->
-          <section class="row">
+          <section class="row my-3">
             <div class="col-1">
               <div>Colored bookmark</div>
             </div>
@@ -94,6 +106,9 @@
             </div>
           </section>
           <!-- !SECTION -->
+          <div class="text-cont">
+            <textarea class="w-100 h-100"></textarea>
+          </div>
         </div>
       </div>
       <!-- !SECTION -->
