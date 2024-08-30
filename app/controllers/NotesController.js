@@ -21,6 +21,13 @@ export class NotesController {
     notesService.createNote(noteData);
   }
 
+  deleteNote() {
+    let wantsToDelete = window.confirm("Are you sure you want to delete this note?");
+    if (wantsToDelete) {
+      notesService.deleteNote();
+    }
+  }
+
   updateBody() {
     const noteTextArea = document.getElementById('note-text-area')
     const noteTextCont = noteTextArea.value;

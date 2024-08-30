@@ -63,7 +63,7 @@ export class Note {
               </div>
             </div>
             <div class="col-md-2 align-self-end">
-              <button class="btn-delete"><i class="mdi mdi-delete"></i> Delete</button>
+              <button onclick="app.NotesController.deleteNote()" class="btn-delete"><i class="mdi mdi-delete"></i> Delete</button>
             </div>
             <div class="col-md-2 align-self-end">
               <button onclick="app.NotesController.updateBody()" class="btn-save"><i class="mdi mdi-floppy"></i> Save</button>
