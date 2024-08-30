@@ -63,8 +63,17 @@ h5 {
   padding: 1em 3em;
 }
 
+.categorized-note:hover {
+  filter: brightness(150%);
+}
+
 .uncategorized-note {
+  background-color: var(--dark);
   padding: 1em;
+}
+
+.uncategorized-note:hover {
+  filter: brightness(150%);
 }
 
 .text-cont {
