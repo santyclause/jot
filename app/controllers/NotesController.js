@@ -6,8 +6,8 @@ export class NotesController {
   constructor() {
     AppState.on('activeNote', this.drawActiveNote, this);
     AppState.on('notes', this.drawNoteList);
-    this.drawNoteList();
     this.drawNoActiveNotes();
+    notesService.loadNotes();
   }
 
   setActiveNote(selectedId) {

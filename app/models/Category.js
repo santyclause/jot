@@ -11,7 +11,7 @@ export class Category {
     const notes = AppState.notes;
     let containedNotes = []
     notes.forEach((note) => {
-      if (note.category == this.name) {
+      if (note.category.toLowerCase() == this.name.toLowerCase()) {
         containedNotes.push(note)
       }
     })

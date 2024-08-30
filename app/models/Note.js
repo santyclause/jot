@@ -7,19 +7,16 @@ export class Note {
     this.name = data.name;
     this.color = data.color;
     this.body = data.body || '';
-    this.createdAt = data.createdAt || new Date();
-    this.updatedAt = data.updatedAt || this.createdAt;
+    this.createdAt = data.createdAt != undefined ? new Date(data.createdAt) : new Date();
+    this.updatedAt = data.updatedAt != undefined ? new Date(data.updatedAt) : this.createdAt;
   }
 
   get createdAtDate() {
-    return this.createdAt.getMonth() + '/' + this.createdAt.getDate() + '/' + this.createdAt.getFullYear();
+    return this.createdAt.toLocaleDateString()
   }
 
   get updatedAtFullDateAndTime() {
-    let date = this.updatedAt;
-    let output = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear() + ' at ' + date.getHours() + ':' + date.getMinutes();
-
-    return output;
+    return this.updatedAt.toLocaleString();
   }
 
   get categorizedHTMLTemplate() {

@@ -1,6 +1,8 @@
 import { AppState } from "../AppState.js";
 import { Note } from "../models/Note.js";
 import { Category } from "../models/Category.js";
+import { saveState } from "../utils/Store.js";
+import { loadState } from "../utils/Store.js";
 
 class NotesService {
 
@@ -22,16 +24,33 @@ class NotesService {
     const newNote = new Note(noteData);
     const categories = AppState.categories;
 
-    if (newNote.category != '' && categories.find((category) => newNote.category == category.name) == undefined) {
+    if (newNote.category != '' && categories.find((category) => newNote.category.toLowerCase() == category.name.toLowerCase()) == undefined) {
       const newCategory = new Category({ name: newNote.category });
       categories.push(newCategory);
     }
     AppState.notes.push(newNote);
+
+    this.saveNotes();
+    this.setActiveNote(newNote.id);
   }
 
   updateBody(areaContent) {
     AppState.activeNote.body = areaContent;
     AppState.emit('notes');
+    this.saveNotes();
+  }
+
+  saveNotes() {
+    saveState('notes', AppState.notes);
+    saveState('categories', AppState.categories);
+  }
+
+  loadNotes() {
+    const notesFromStorage = loadState('notes', [Note]);
+    const categoriesFromStorage = loadState('categories', [Category]);
+
+    AppState.notes = notesFromStorage;
+    AppState.categories = categoriesFromStorage;
   }
 }
 
