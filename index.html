@@ -27,21 +27,23 @@
       <div class="col-md-3">
         <div class="my-card">
           <!-- NOTE Jot count -->
-          <div class="text-end my-3">
-            Jot count
+          <div id="jot-count" class="text-end my-3">
+            <!-- Jot count goes here -->
           </div>
           <!-- STUB Form-->
           <div>
             <form onsubmit="app.NotesController.createNote()" class="container-fluid p-0">
               <section class="row g-1">
                 <div class="col-md-8">
-                  <input type="text" name="name" placeholder="Jot Name" class="w-100" required>
+                  <input type="text" name="name" placeholder="Jot Name" class="w-100" minlength="3" maxlength="15"
+                    required>
                 </div>
                 <div class="col-md-4">
                   <input type="color" name="color" class="w-100 h-100" value="#999999" required>
                 </div>
                 <div class="col-md-8">
-                  <input type="text" name="category" placeholder="Jot Category" class="w-100">
+                  <input type="text" name="category" placeholder="Jot Category" minlength="3" maxlength="15"
+                    class="w-100">
                 </div>
                 <div class="col-md-4">
                   <button type="submit" class="w-100 h-100 btn-create">Create</button>

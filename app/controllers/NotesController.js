@@ -36,6 +36,7 @@ export class NotesController {
 
   drawNoteList() {
     const noteListElem = document.getElementById('note-list');
+    const jotCountElem = document.getElementById('jot-count');
     const categories = AppState.categories;
     const notes = AppState.notes;
     let noteCont = ``;
@@ -48,6 +49,7 @@ export class NotesController {
     })
 
     noteListElem.innerHTML = noteCont;
+    jotCountElem.innerText = notes.length + ' notes';
   }
 
   drawActiveNote() {
