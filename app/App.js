@@ -1,9 +1,10 @@
+import { NotesController } from './controllers/NotesController.js';
 import { router } from './router-config.js';
 const USE_ROUTER = false
 
 class App {
 
-
+  NotesController = new NotesController();
 
   constructor() {
     if (USE_ROUTER) {
