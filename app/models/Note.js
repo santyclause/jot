@@ -13,7 +13,7 @@ export class Note {
 
   get categorizedHTMLTemplate() {
     return `
-                  <div class="categorized-note" style="border-left: ${this.color}">
+                  <div class="categorized-note" style="border-left: 2px solid ${this.color}">
                     <p>
                       <i class="mdi mdi-note"></i>
                       <span>${this.name}</span>
@@ -26,7 +26,7 @@ export class Note {
   get uncategorizedHTMLTemplate() {
     return `
               <div class="col-12">
-                <div class="uncategorized-note" style="border-left: ${this.color}">
+                <div class="uncategorized-note" style="border-left: 2px solid ${this.color}">
                   <p>
                     <i class="mdi mdi-note"></i>
                     <span>${this.name}</span>
