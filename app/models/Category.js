@@ -17,4 +17,27 @@ export class Category {
     })
     return containedNotes;
   }
+
+  get containedNotesHTML() {
+    const notes = this.containedNotes();
+    let noteHTMLCont = '';
+    notes.forEach((note) => noteHTMLCont += note.categorizedHTMLTemplate);
+    return noteHTMLCont;
+  }
+
+  get HTMLTemplate() {
+    return `
+              <div class="col-12">
+                <div class="category-cont">
+                  <div class="category" role="button">
+                    <p>
+                      <i class="mdi mdi-folder"></i>
+                      <span>${this.name}</span>
+                    </p>
+                  </div>
+                  ${this.containedNotesHTML}
+                </div>
+              </div>
+    `
+  }
 }

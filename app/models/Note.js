@@ -10,4 +10,32 @@ export class Note {
     this.createdAt = data.createdAt || new Date();
     this.updatedAt = data.updatedAt || this.createdAt;
   }
+
+  get categorizedHTMLTemplate() {
+    return `
+                  <div class="categorized-note" style="border-left: ${this.color}">
+                    <p>
+                      <i class="mdi mdi-note"></i>
+                      <span>${this.name}</span>
+                    </p>
+                    <p>${this.body.slice(0, 30)}...</p>
+                  </div>
+    `
+  }
+
+  get uncategorizedHTMLTemplate() {
+    return `
+              <div class="col-12">
+                <div class="uncategorized-note" style="border-left: ${this.color}">
+                  <p>
+                    <i class="mdi mdi-note"></i>
+                    <span>${this.name}</span>
+                  </p>
+                  <p>
+                    ${this.body.slice(0, 30)}...
+                  </p>
+                </div>
+              </div>
+    `
+  }
 }

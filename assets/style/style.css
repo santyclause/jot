@@ -12,9 +12,22 @@ p {
   margin: 0;
 }
 
+.h-10 {
+  height: 10%;
+}
+
+.h-90 {
+  height: 90%;
+}
+
 .bgm-darker {
   background-color: var(--darker);
   color: var(--light)
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
 }
 
 .my-card {
@@ -22,6 +35,7 @@ p {
   height: 100%;
   border-radius: 10px;
   padding: 0.5em 1em;
+  flex: 1;
 }
 
 .category-cont {
@@ -46,6 +60,14 @@ p {
 }
 
 .text-cont {
-  display: flex;
-  flex: 2;
+  flex: 1;
+}
+
+.note-input {
+  flex: 1;
+  background-color: var(--darkLight);
+  color: var(--light);
+  border: 1px solid var(--primary);
+  border-radius: 10px;
+  padding: 1em;
 }
