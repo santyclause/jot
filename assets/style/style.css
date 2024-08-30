@@ -1,1 +1,7 @@
-/* BASIC STYLES HERE */
+:root {
+  --light: #F1ECDF;
+  --darker: #1F1D38;
+  --dark: #282546;
+  --primary: #1E8DA6;
+  --secondary: #E1561B;
+}

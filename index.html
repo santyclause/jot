@@ -16,8 +16,57 @@
 </head>
 
 <body>
-  <main>
-
+  <main class="container-fluid">
+    <div>
+      <h5>Jot...</h5>
+    </div>
+    <!-- SECTION Main content with note list on the left and the active note on the right -->
+    <section class="row">
+      <div class="col-md-3">
+        <!-- NOTE Jot count -->
+        <div>
+          Jot count
+        </div>
+        <!-- STUB Form-->
+        <div>
+          Form
+        </div>
+        <!-- SECTION Note list -->
+        <div class="container-fluid">
+          <section class="row">
+            <div class="col-12">
+              <div>Category</div>
+            </div>
+          </section>
+          <!-- !SECTION -->
+        </div>
+      </div>
+      <!-- SECTION Active note screen -->
+      <div class="col-md-9">
+        <!-- SECTION Note details -->
+        <section class="row">
+          <div class="col-1">
+            <div>Colored bookmark</div>
+          </div>
+          <div class="col-md-9">
+            <div>
+              <h3>Note Title</h3>
+              <p>Created date</p>
+              <p>Last updated time</p>
+            </div>
+          </div>
+          <div class="col-md-1 align-self-end">
+            <button>Delete</button>
+          </div>
+          <div class="col-md-1 align-self-end">
+            <button>Save</button>
+          </div>
+        </section>
+        <!-- !SECTION -->
+      </div>
+      <!-- !SECTION -->
+    </section>
+    <!-- !SECTION -->
   </main>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
