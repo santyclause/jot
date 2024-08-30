@@ -15,6 +15,10 @@ class NotesService {
       AppState.activeNote = null;
     }
   }
+
+  updateBody(areaContent) {
+    AppState.activeNote.body = areaContent;
+  }
 }
 
 export const notesService = new NotesService();

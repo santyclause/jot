@@ -58,22 +58,22 @@ export class Note {
             <div class="col-1 d-flex justify-content-end">
               <div class="w-75 h-100 bookmark" style="background-color: ${this.color}"></div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-7">
               <div>
                 <h3>${this.name}</h3>
                 <p>Created on ${this.createdAtDate}</p>
                 <p>Last updated on ${this.updatedAtFullDateAndTime}</p>
               </div>
             </div>
-            <div class="col-md-1 align-self-end">
+            <div class="col-md-2 align-self-end">
               <button class="btn-delete"><i class="mdi mdi-delete"></i> Delete</button>
             </div>
-            <div class="col-md-1 align-self-end">
-              <button class="btn-save"><i class="mdi mdi-floppy"></i> Save</button>
+            <div class="col-md-2 align-self-end">
+              <button onclick="app.NotesController.updateBody()" class="btn-save"><i class="mdi mdi-floppy"></i> Save</button>
             </div>
           </section>
           <div class="text-cont col-flex pb-4 px-4">
-            <textarea class="w-100 note-input" placeholder="Jot down your note here..."></textarea>
+            <textarea id="note-text-area" class="w-100 note-input" placeholder="Jot down your note here...">${this.body}</textarea>
           </div>
     `
   }
