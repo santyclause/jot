@@ -34,6 +34,10 @@ h5 {
   flex-direction: column;
 }
 
+.body-preview {
+  color: var(--primary);
+}
+
 .my-card {
   background-color: var(--dark);
   height: 100%;

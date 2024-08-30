@@ -18,7 +18,9 @@ export class Note {
                       <i class="mdi mdi-note"></i>
                       <span>${this.name}</span>
                     </p>
-                    <p>${this.body.slice(0, 30)}...</p>
+                    <p class="body-preview">
+                      ${this.body.slice(0, 30)}...
+                    </p>
                   </div>
     `
   }
@@ -31,7 +33,7 @@ export class Note {
                     <i class="mdi mdi-note"></i>
                     <span>${this.name}</span>
                   </p>
-                  <p>
+                  <p class="body-preview">
                     ${this.body.slice(0, 30)}...
                   </p>
                 </div>
