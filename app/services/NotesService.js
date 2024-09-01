@@ -44,9 +44,9 @@ class NotesService {
     const categories = AppState.categories;
     let selectedIndex = notes.findIndex((note) => note.id == AppState.activeNote.id);
 
-    const notesOfSameCategory = notes.filter((note) => note.category == notes[selectedIndex].category);
+    const notesOfSameCategory = notes.filter((note) => note.category.toLowerCase() == notes[selectedIndex].category.toLowerCase());
     if (notesOfSameCategory.length == 1) {
-      let categoryIndex = categories.findIndex((category) => category.name == notes[selectedIndex].category);
+      let categoryIndex = categories.findIndex((category) => category.name.toLowerCase() == notes[selectedIndex].category.toLowerCase());
       categories.splice(categoryIndex, 1);
     }
 

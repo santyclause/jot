@@ -19,6 +19,7 @@ export class NotesController {
     const newNoteForm = event.target;
     const noteData = getFormData(newNoteForm);
     notesService.createNote(noteData);
+    newNoteForm.reset()
   }
 
   deleteNote() {
