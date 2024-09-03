@@ -36,6 +36,7 @@ export class NotesController {
     const noteTextArea = document.getElementById('note-text-area')
     const noteTextCont = noteTextArea.value;
     notesService.updateBody(noteTextCont);
+    this.drawActiveNote()
   }
 
   drawNoteList() {
